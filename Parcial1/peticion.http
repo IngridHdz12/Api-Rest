@@ -1,0 +1,8 @@
+POST https://jsonplaceholder.typicode.com/posts HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Práctica de Arquitectura REST",
+    "body": "Desarrollo de peticiones HTTP",
+    "userId": 22100199
+}
