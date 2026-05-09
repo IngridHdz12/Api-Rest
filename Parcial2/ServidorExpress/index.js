@@ -1,15 +1,27 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const PORT = 3000;
 
-app.get('/mensaje', (req, res) => {
-  res.json({
-    estado: "Exitoso",
-    mensaje: "Servidor Express listo para el Parcial 2",
-    alumno: "Ingrid Annete Hernández Montoya"
-  });
+app.get('/alumnos', (req, res) => {
+    res.status(200).json({
+        mensaje: "Datos del alumnos",
+        datos: 
+            { id: 22100199, nombre: "Ingrid Hernández", carrera: "sistemas"}                    
+    });
 });
 
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
+
+
+ 
+app.use((req, res, next) => {
+    res.status(404).send('Error');
+});
+
+app.use((err, req, res, next) => {
+    console.log("Error detectado");
+    res.status(500).send('ocurrio un error en el servidor');
 });
