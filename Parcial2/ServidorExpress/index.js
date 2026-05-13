@@ -11,9 +11,6 @@ app.get('/alumnos', (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
 
 
  
@@ -24,4 +21,9 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
     console.log("Error detectado");
     res.status(500).send('ocurrio un error en el servidor');
+});
+
+
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
