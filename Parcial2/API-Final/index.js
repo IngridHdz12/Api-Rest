@@ -6,7 +6,6 @@ const path = require('path');
 const app = express();
 app.use(express.json());
 
-
 const PORT = process.env.PORT || 8081; 
 
 // --- CONFIGURACIÓN DE SWAGGER 
@@ -53,7 +52,7 @@ let empleados = [
  * type: object
  * properties:
  * id:
- * type: number
+ * type: integer
  * example: 3
  * nombre:
  * type: string
@@ -140,6 +139,7 @@ app.post('/empleado', (req, res) => {
  * required: true
  * schema:
  * type: integer
+ * description: ID del empleado a modificar
  * requestBody:
  * required: true
  * content:
@@ -174,6 +174,7 @@ app.put('/empleado/:id', (req, res) => {
  * required: true
  * schema:
  * type: integer
+ * description: ID del empleado a eliminar
  * responses:
  * 200:
  * description: Empleado eliminado con éxito.
