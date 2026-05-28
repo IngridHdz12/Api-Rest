@@ -19,12 +19,12 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: `http://localhost:${PORT}`,
-                description: 'Servidor Local'
-            },
-            {
                 url: '/',
                 description: 'Servidor en Producción (Render)'
+            },
+            {
+                url: `http://localhost:8081`, // Forzamos el 8081 para cuando pruebes en tu PC
+                description: 'Servidor Local'
             }
         ],
     },
